@@ -1,0 +1,7 @@
+---
+- hosts: windows
+  tasks:
+    - win_service:
+       name: NovowareBridge
+       start_mode: auto
+       state: '{{ state }}'

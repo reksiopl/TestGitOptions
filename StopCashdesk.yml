@@ -1,0 +1,17 @@
+---
+- name: stop cashdesk
+  hosts: windows  
+
+  tasks:
+    - name: check if cashesk is running
+      raw: tasklist /fi "IMAGENAME eq Novoware2004.exe"
+      register: result
+
+    - debug: msg="{{result}}"
+
+    - name: kill cashdesk
+      raw: taskkill /s {{ address }} /u {{ user }} /p {{ password }} /f /im Novoware2004.exe
+      when: '"Novoware2004" in result.stdout'
+        
+    
+    

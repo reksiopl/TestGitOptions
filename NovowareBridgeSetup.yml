@@ -1,0 +1,25 @@
+---
+- hosts: "{{host}}"
+  tasks:
+    - name: Install service NovowareBridge 
+      raw: cmd /c sc create NovowareBridge binpath="{{binpath}}"
+      register: result
+  
+    - debug: msg="{{result}}"
+
+    - name: Config service NovowareBridge
+      raw: cmd /c sc config NovowareBridge obj="{{username}}" password="{{password}}"
+      register: result
+    
+    - debug: msg="{{result}}"
+ 
+    - win_service:
+       name: NovowareBridge
+       start_mode: auto
+       state: started
+      
+      
+    
+
+   
+
