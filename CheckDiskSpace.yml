@@ -8,4 +8,4 @@
 	   disk: "c"
       register: disk_facts
             
-    - debug: msg={{disk_facts}}
+    - debug: msg={{disk_facts}} 
