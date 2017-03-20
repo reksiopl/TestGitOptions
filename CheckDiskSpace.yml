@@ -1,0 +1,11 @@
+﻿---
+-
+  hosts: all
+  tasks:
+      
+    - name: Check free space on disk
+      win_disk:
+	   disk: "c"
+      register: disk_facts
+            
+    - debug: msg={{disk_facts}}
