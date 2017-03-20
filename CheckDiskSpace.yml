@@ -1,6 +1,6 @@
 ﻿---
 -
-  hosts: all
+  hosts: windows
   tasks:
       
     - name: Check free space on disk
