@@ -1,0 +1,36 @@
+---
+- name: update Novoware
+  hosts: windows
+   
+  vars_files:
+      - NwUpdaterParameters.yml
+ 
+  tasks:      
+      - name: obtain information about updater file
+        win_stat: 
+            path: "{{updaterPath}}"
+        register: file_info
+
+      - debug: msg="{{file_info}}"
+   
+      - name: run updater 
+        raw: "{{updaterPath}}
+             --login {{login}}
+             --pass {{pass}}
+             --sqluser {{sqluser}}
+             --sqlpass {{sqlpass}}
+             --mdinet inventory_hostname
+             --reports 
+             --rserver {{rserver}}
+             --log {{logPath}}"
+        when: file_info.stat.exists
+
+      - name: find element 
+        win_find_in_file:
+            file: "{{logPath}}"
+            search_for: "{{successMessage}}"           
+        register: result  
+        when: file_info.stat.exists
+
+      - debug: msg="{{result}}"
+        when: file_info.stat.exists
