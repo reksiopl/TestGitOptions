@@ -1,15 +1,25 @@
 ---
 -
   hosts: windows
+  vars:
+    databaseName:
+     - "NovoJackpot"
+     - "NovoWare"
+     - "NovoTito"
+     - "NovoStat"
+     - "NovoHistory"
   tasks:
-    - name: Set compability level
+    - name: Set compatibility level & auto close
       register: result
       win_mssql_db_parameter:
-       database: "NovoJackpot"
+       database: "{{ item }}"
        param: "COMPATIBILITY_LEVEL"
        value: "100"
        param_type: "int"
        failed_when: result.output != True
+      with_items:
+        "{{ databaseName }}"
+          
 
     - name: Set auto close 
       register: result
