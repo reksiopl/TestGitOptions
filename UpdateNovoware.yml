@@ -24,13 +24,13 @@
              --rserver {{rserver}}
              --log {{logPath}}"
         when: file_info.stat.exists
-
+      # review: Nie prawdziwy stan. Zreprodukuj sobie przy uruchomionych serwisach
       - name: find element 
         win_find_in_file:
             file: "{{logPath}}"
-            search_for: "{{successMessage}}"           
+            search_for: "{{successMessage}}"      
         register: result  
         when: file_info.stat.exists
-
+      # review: A jeśli sie nie
       - debug: msg="{{result}}"
         when: file_info.stat.exists

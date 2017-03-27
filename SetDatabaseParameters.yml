@@ -1,0 +1,11 @@
+---
+-
+  hosts: windows
+  tasks:
+    - name: Set compability level
+      win_mssql_db_parameter:
+       database: "c"
+       param: "COMPATIBILITY_LEVEL"
+       value: "100"
+       param_type: "int"
+       
