@@ -23,7 +23,7 @@
     - name: Set auto close 
       register: result
       win_mssql_db_parameter:
-       database: "NovoJackpot"
+       database: "{{ item }}"
        param: "AUTO_CLOSE"
        value: "ON"
        failed_when: result.output != True
