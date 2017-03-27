@@ -9,7 +9,7 @@
      - "NovoStat"
      - "NovoHistory"
   tasks:
-    - name: Set compatibility level & auto close
+    - name: Set compatibility level
       register: result
       win_mssql_db_parameter:
        database: "{{ item }}"
@@ -19,8 +19,7 @@
        failed_when: result.output != True
       with_items:
         "{{ databaseName }}"
-          
-
+       
     - name: Set auto close 
       register: result
       win_mssql_db_parameter:
@@ -28,4 +27,6 @@
        param: "AUTO_CLOSE"
        value: "ON"
        failed_when: result.output != True
+      with_items:
+        "{{ databaseName }}"
 
