@@ -3,9 +3,12 @@
   hosts: windows
   tasks:
     - name: Set compability level
+      register: result
       win_mssql_db_parameter:
        database: "NovoJackpot"
        param: "COMPATIBILITY_LEVEL"
-       value: "90"
+       value: "100"
        param_type: "int"
+       failed_when: result.output != True
+
        
