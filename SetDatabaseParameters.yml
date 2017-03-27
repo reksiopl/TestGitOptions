@@ -14,7 +14,7 @@
     - name: Set auto close 
       register: result
       win_mssql_db_parameter:
-       databse: "NovoJackpot"
+       database: "NovoJackpot"
        param: "AUTO_CLOSE"
        value: "ON"
        failed_when: result.output != True
