@@ -4,8 +4,8 @@
   tasks:
     - name: Set compability level
       win_mssql_db_parameter:
-       database: "c"
+       database: "NovoJackpot"
        param: "COMPATIBILITY_LEVEL"
-       value: "120"
+       value: "120"s
        param_type: "int"
        
