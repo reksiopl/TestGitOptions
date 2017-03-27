@@ -6,6 +6,6 @@
       win_mssql_db_parameter:
        database: "NovoJackpot"
        param: "COMPATIBILITY_LEVEL"
-       value: "120"s
+       value: "120"
        param_type: "int"
        
