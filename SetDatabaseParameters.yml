@@ -6,6 +6,6 @@
       win_mssql_db_parameter:
        database: "c"
        param: "COMPATIBILITY_LEVEL"
-       value: "100"
+       value: "120"
        param_type: "int"
        
