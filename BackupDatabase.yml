@@ -18,9 +18,9 @@
        
     - name: Backup database
       register: result
-      win_mssql_db_parameter:
+      win_mssql_db_backup:
        database: "{{ item }}"
-       driectory: "C:\\"
+       directory: "C:\\"
        failed_when: result.output != True
       with_items:
         "{{ databaseName }}"
