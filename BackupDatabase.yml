@@ -1,0 +1,36 @@
+---
+-
+  hosts: windows
+  vars:
+    jobname:
+     - "NOVOHISTORY_LOG"
+    databaseName:
+     - "NovoJackpot"
+  tasks:
+    - name: Disable jobs
+      register: result
+      win_mssql_db_job:
+       jobname: "{{ item }}"
+       enable: 0
+       failed_when: result.output != True
+      with_items:
+        "{{ jobname }}"
+       
+    - name: Backup database
+      register: result
+      win_mssql_db_parameter:
+       database: "{{ item }}"
+       driectory: "C:\\"
+       failed_when: result.output != True
+      with_items:
+        "{{ databaseName }}"
+
+    - name: Enable jobs
+      register: result
+      win_mssql_db_job:
+       jobname: "{{ item }}"
+       enable: 1
+       failed_when: result.output != True
+      with_items:
+        "{{ jobname }}"
+
