@@ -3,9 +3,29 @@
   hosts: windows
   vars:
     jobname:
+     - "NOVO_INDEX_DEFRAG"
+     - "NOVOHISTORY_DIFF"
      - "NOVOHISTORY_LOG"
-    databaseName:
+     - "NOVOHISTORY_MAINT"
+     - "NOVOJACKPOT_DIFF"
+     - "NOVOJACKPOT_LOG"
+     - "NOVOJACKPOT_MAINT"
+     - "NOVOJACKPOT_MONITOR_CLEANER"
+     - "NOVOJACKPOT_MONITOR_TOOL"
+     - "NOVOSTAT_DIFF"
+     - "NOVOSTAT_LOG"
+     - "NOVOSTAT_MAINT"
+     - "NOVOTITO_DIFF"
+     - "NOVOTITO_LOG"
+     - "NOVOTITO_MAINT"
+     - "NOVOWARE_DIFF"
+     - "NOVOWARE_LOG"
+     - "NOVOWARE_MAINT"
+    databasename:
      - "NovoJackpot"
+     - "NovoHistory"
+     - "NovoStat"
+     - "NovoWare"
   tasks:
     - name: Disable jobs
       register: result
@@ -23,7 +43,7 @@
        directory: "C:\\"
        failed_when: result.output != True
       with_items:
-        "{{ databaseName }}"
+        "{{ databasename }}"
 
     - name: Enable jobs
       register: result
