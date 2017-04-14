@@ -28,29 +28,23 @@
      - "NovoWare"
   tasks:
     - name: Disable jobs
-      register: result
       win_mssql_db_job:
        jobname: "{{ item }}"
        enable: 0
-       failed_when: result.output != True
       with_items:
         "{{ jobname }}"
        
     - name: Backup database
-      register: result
       win_mssql_db_backup:
        database: "{{ item }}"
        directory: "C:\\"
-       failed_when: result.output != True
       with_items:
         "{{ databasename }}"
 
     - name: Enable jobs
-      register: result
       win_mssql_db_job:
        jobname: "{{ item }}"
        enable: 1
-       failed_when: result.output != True
       with_items:
         "{{ jobname }}"
 
