@@ -15,11 +15,19 @@
        url: "{{uri_start}}"
        method: GET
 
+    - name: Wait for MDI
+      pause:
+       minutes: 1
+
     - name: Remove MDI driver
       win_uri:
        url: "{{uri_remove_drvier}}?hwa={{HWA}}"
        method: "GET"    
 
+    - name: Wait for MDI
+      pause:
+       minutes: 2 
+       
     - name: Start load driver
       win_uri:
        url: "{{uri_start_load_driver}}"
