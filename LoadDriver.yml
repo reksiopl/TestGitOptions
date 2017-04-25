@@ -17,7 +17,7 @@
 
     - name: Wait for MDI
       pause:
-       minutes: 1
+       seconds: 30
 
     - name: Remove MDI driver
       win_uri:
@@ -27,12 +27,12 @@
     - name: Wait for MDI
       pause:
        minutes: 2 
-       
+
     - name: Start load driver
       win_uri:
        url: "{{uri_start_load_driver}}"
        method: "POST"
-       body: "{ 'Driver' : 'MDI3_IGT' , 'Hwa' : '{{HWA}}' }"
+       body: "{ 'Driver': 'MDI3_IGT', 'Hwa': '{{HWA}}' }"
 
 
 
