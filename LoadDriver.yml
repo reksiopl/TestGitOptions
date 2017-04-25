@@ -10,29 +10,11 @@
     HWA: "00409D70C330"
     driver: "IGT"
   tasks:
-    - name: Start Mdi Loader
-      win_uri:
-       url: "{{uri_start}}"
-       method: GET
-
-    - name: Wait for MDI
-      pause:
-       seconds: 30
-
-    - name: Remove MDI driver
-      win_uri:
-       url: "{{uri_remove_drvier}}?hwa={{HWA}}"
-       method: "GET"    
-
-    - name: Wait for MDI
-      pause:
-       minutes: 2 
-
     - name: Start load driver
       win_uri:
        url: "{{uri_start_load_driver}}"
        method: "POST"
-       body: "{'Driver':'MDI3_IGT','Hwa':'323232323'}"
+       body: "{ 'Driver' : 'MDI3_IGT' , 'Hwa' : '{{HWA}}' }"
 
 
 
