@@ -13,6 +13,7 @@
     - name: Start Mdi Loader
       win_uri:
        uri: "{{uri_start}}"
+       method: GET
 
     - name: Remove MDI driver
       win_uri:
