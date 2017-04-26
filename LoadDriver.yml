@@ -10,7 +10,7 @@
     HWA: "00409D70C330"
     driver: "IGT"
   tasks:
-    - name: Start Mdi Loader
+    #- name: Start Mdi Loader
     #  win_uri:
     #   url: "{{uri_start}}"
     
