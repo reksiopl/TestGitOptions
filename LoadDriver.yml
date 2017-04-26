@@ -23,7 +23,7 @@
       win_uri2:
        url: "{{uri_start_load_driver}}"
        method: "POST"
-       body: "{ 'Driver' : 'MDI3_IGT' , 'Hwa' : '{{HWA}}' }"
+       body: "{ 'Driver' : 'MDI3_IGT', 'Hwa' : '{{HWA}}' }"
 
 
 
