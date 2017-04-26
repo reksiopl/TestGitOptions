@@ -19,7 +19,7 @@
 
     - name: Remove MDI driver
       win_uri:
-       uri: "{{uri_remove_drvier}}?hwa={{HWA}}"
+       url: "{{uri_remove_drvier}}?hwa={{HWA}}"
        method: "GET"    
 
     - pause:
