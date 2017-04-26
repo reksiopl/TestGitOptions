@@ -23,7 +23,7 @@
       win_uri3:
         url: "{{uri_start_load_driver}}"
         method: POST
-        ContentType: "application/json"
+        content_type: "application/json"
         body: "{'Driver':'MDI3_IGT', 'Hwa':'7777'}"
 
 
