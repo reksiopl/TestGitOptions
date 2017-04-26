@@ -25,7 +25,7 @@
        method: "POST"
        content_type : "application/json"
       # use_basic_parsing: false
-       body: "{ 'Driver': 'MDI3_IGT', 'Hwa': '00409D70C337' }"
+       body: "{ 'Hwa': '00409D70C337' }"
 
 
 
