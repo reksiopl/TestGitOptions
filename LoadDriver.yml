@@ -12,7 +12,7 @@
   tasks:
     - name: Start Mdi Loader
       win_uri:
-       uri: "{{uri_start}}"
+       url: "{{uri_start}}"
 
     #- name: Remove MDI driver
     #  win_uri:
