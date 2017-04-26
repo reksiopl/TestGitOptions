@@ -15,7 +15,7 @@
        url: "{{uri_start}}"
     
     - pause:
-      seconds: 30
+       seconds: 30
 
     - name: Remove MDI driver
       win_uri:
@@ -23,7 +23,7 @@
        method: "GET"    
 
     - pause:
-      seconds: 30
+       seconds: 30
 
     - name: Start load driver
       win_uri_extend:
