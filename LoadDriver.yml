@@ -20,7 +20,7 @@
     #   method: "GET"    
 
     - name: Start load driver
-      win_uri3:
+      win_uri_extend:
         url: "{{uri_start_load_driver}}"
         method: POST
         content_type: "application/json"
