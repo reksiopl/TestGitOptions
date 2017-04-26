@@ -24,7 +24,7 @@
        url: "{{uri_start_load_driver}}"
        method: "POST"
        content_type : "application/json"
-       use_basic_parsing: false
+      # use_basic_parsing: false
        body: "{ 'Driver': 'MDI3_IGT', 'Hwa': '00409D70C337' }"
 
 
