@@ -1,9 +1,0 @@
----
-updaterPath: c:\\SharedFolder\\Components\\NovowareServerUpdater\\2.5.9.2\\NWUpdater.exe
-login: Administrator
-pass: Gumpold@12
-sqluser: sa
-sqlpass: warwolf@12 
-rserver: https://SIT_VSERVER143/ReportServer/RepostService2005.asmx 
-logPath: c:\UpdateLog.log 
-successMessage: success
